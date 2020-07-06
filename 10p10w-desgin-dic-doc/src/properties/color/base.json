@@ -1,0 +1,48 @@
+{
+  "color": {
+    "rose": {
+      "light": {
+        "value": "#9f4358"
+      },
+      "medium": {
+        "value": "#890620"
+      },
+      "dark": {
+        "value": "#4B0412"
+      }
+    },
+    "sea": {
+      "light": {
+        "value": "#2CB7B4"
+      },
+      "medium": {
+        "value": "#007B79"
+      },
+      "dark": {
+        "value": "#005D5A"
+      }
+    },
+    "ash": {
+      "light": {
+        "value": "#8B98A9"
+      },
+      "medium": {
+        "value": "#566271"
+      },
+      "dark": {
+        "value": "#2D393A"
+      }
+    },
+    "gray": {
+      "light": {
+        "value": "#eeeeee"
+      },
+      "medium": {
+        "value": "#999999"
+      },
+      "dark": {
+        "value": "#222222"
+      }
+    }
+  }
+}

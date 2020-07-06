@@ -1,0 +1,63 @@
+@import '../variables';
+@import '../mixins.scss';
+
+.side-tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: $spacing-xl;
+  background-color: $color-gray-light;
+  color: black;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  box-shadow: 0px -1px 12px black;
+  justify-content: space-between;
+}
+
+.tab-content {
+  margin-top: $spacing-xl;
+  padding: $spacing-l $spacing-xl;
+  background-color: $color-gray-dark;
+  color: $color-gray-light;
+  box-sizing: border-box;
+}
+
+.tabs-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin: auto $gutter auto 0;
+  height: 100%;
+
+  li {
+    padding: 0 20px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 5px solid transparent;
+
+    &:hover {
+      border-bottom: 5px solid $color-sea-light;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    display: none;
+  }
+}
+
+.heading {
+  font-size: $font-heading-4;
+  margin: $spacing-l 0;
+}
+
+.logo {
+  margin: auto 0 auto $gutter;
+
+  @media screen and (max-width: 760px) {
+    margin: auto;
+  }
+}

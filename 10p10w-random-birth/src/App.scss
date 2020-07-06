@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;600&display=swap');
+
+:root {
+
+  &>*,
+  &>*>div {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+
+  :not(.birth-btn) {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+
+    @media (max-width: 450px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    top: -200vh;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes loading-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  12%,
+  88% {
+    opacity: 1;
+  }
+}
+
+@keyframes prelude-1-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  9%,
+  91% {
+    opacity: 1;
+  }
+}
+
+@keyframes prelude-2-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  12%,
+  88% {
+    opacity: 1;
+  }
+}
+
+@keyframes prelude-3-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  18%,
+  82% {
+    opacity: 1;
+  }
+}
+
+@keyframes result-wait {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes result-fade {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes reload-fade-2 {
+
+  0%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes reload-fade {
+
+  0%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.Results {
+  color: white;
+  position: relative;
+  min-height: 200vh;
+  background-image: linear-gradient(#110e22, #2d2075, #ddd6ff);
+  height: 100%;
+  animation-name: slide-in;
+  animation-duration: 1.3s;
+}
+
+.loading {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: loading-fade 3s linear;
+  animation-delay: 1.3s;
+
+  .loader,
+  .loader:after {
+    border-radius: 50%;
+    width: 15em;
+    height: 15em;
+  }
+
+  .loader {
+    margin: 4px auto;
+    font-size: 2px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid #fff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 0.6s infinite linear;
+    animation: load8 0.6s infinite linear;
+  }
+
+  @-webkit-keyframes load8 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes load8 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.prelude {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__first {
+    opacity: 0;
+    animation: prelude-1-fade 4s linear;
+    animation-delay: 4.3s;
+  }
+
+  &__second {
+    opacity: 0;
+    animation: prelude-2-fade 3s linear;
+    animation-delay: 5.3s;
+  }
+
+  &__third {
+    opacity: 0;
+    animation: prelude-3-fade 2s linear;
+    animation-delay: 6.3s;
+  }
+}
+
+:root .result {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__intro {
+    opacity: 1;
+    animation-name: result-wait, result-fade;
+    animation-duration: 8.3s, 0.3s;
+    animation-delay: 0s, 8.3s;
+  }
+
+  &__country {
+    opacity: 1;
+    animation-name: result-wait, result-fade;
+    animation-duration: 8.8s, 0.3s;
+    animation-delay: 0s, 8.8s;
+
+    &--reanimate {
+      animation: reload-fade 1.2s;
+    }
+
+    &--reanimate-2 {
+      animation: reload-fade-2 1.2s;
+    }
+  }
+
+  &__flavor {
+    font-size: 0.9rem;
+    font-weight: 400;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
+
+    &--open {
+      max-height: 500px;
+    }
+  }
+
+  &__clickable {
+    cursor: pointer;
+  }
+}
+
+:root .again-btn {
+  margin-top: 24px;
+  opacity: 1;
+  visibility: visible;
+  animation-name: result-wait, result-fade;
+  animation-duration: 10s, 0.3s;
+  animation-delay: 0s, 10s;
+  text-shadow: none;
+  border-radius: 36px;
+  padding: 6px 36px;
+  border: none;
+  cursor: pointer;
+  color: #110e22;
+}

@@ -1,0 +1,28 @@
+{
+  "font": {
+    "heading-1": {
+      "value": "6rem",
+      "comment": "the largest heading font size"
+    },
+    "heading-2": {
+      "value": "4rem",
+      "comment": "the largest heading font size"
+    },
+    "heading-3": {
+      "value": "3rem",
+      "comment": "the largest heading font size"
+    },
+    "heading-4": {
+      "value": "2rem",
+      "comment": "the large size of the font"
+    },
+    "medium": {
+      "value": "1rem",
+      "comment": "the medium size of the font"
+    },
+    "small": {
+      "value": "0.75rem",
+      "comment": "the small size of the font"
+    }
+  }
+}

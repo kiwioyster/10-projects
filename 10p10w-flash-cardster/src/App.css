@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+
+:root {}
+
+body {}
+
+
+.App {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 24px;
+  background-color: rgb(52, 58, 58);
+  color: floralwhite;
+  text-align: center;
+  min-height: 100vh;
+
+}
+
+.App button {
+  border: none;
+  padding: 24px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.Menu {}
+
+.menu-menu {
+  height: fit-content;
+  background-image: linear-gradient(to right, #6e98db, #86b5ff, #6e98db);
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-btn-ctn {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  box-shadow: inset 0 10px 10px -10px black;
+}
+
+.menu-opener {
+  box-shadow: 0 -1px 12px black;
+  padding: 24px;
+  z-index: 1;
+}
+
+.dropdown-icon {
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  transition: all 0.2s ease-out;
+}
+
+.dropdown-icon--rotated {
+  transform: rotate(180deg);
+}
+
+.menu-btn-ctn.open {
+  height: unset;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: #6e98db;
+  z-index: 1;
+  padding-top: 8px;
+}
+
+.menu-btn-ctn.open button {
+  font-size: 28px;
+  background-color: transparent;
+}
+
+.active {}
+
+.Cardster {
+  width: 400px;
+  height: 180px;
+  margin: 24px auto;
+  color: black;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+@media (max-width: 450px) {
+  .Cardster {
+    width: 320px;
+    height: 220px;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 2px 2px 12px black;
+  background-color: floralwhite;
+}
+
+.Cardster--flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  border-radius: 12px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.flip-card-front {
+  background-color: #aecdff;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #b6ffbb;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 36px 0;
+}
+
+.input-field {
+  width: 360px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  margin-left: 1rem;
+  padding: 8px 12px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .input-field {
+    width: 280px;
+  }
+}
+
+.App button.add-btn {
+  background-color: #97f09d;
+  width: 360px;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 24px auto;
+}
+
+.add-btn:focus {
+  outline: 0;
+}
+
+.add-btn:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.delete-btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+}
+
+.delete-btn:active {
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.delete-svg {
+  height: 24px;
+}
+
+.all-card-text {
+  font-size: 22px;
+  margin: 0;
+  padding-top: 18px;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 4px auto;
+  font-size: 2px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-right: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.6s infinite linear;
+  animation: load8 0.6s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

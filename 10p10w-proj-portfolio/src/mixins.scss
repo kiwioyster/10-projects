@@ -1,0 +1,5 @@
+@mixin pill {
+  border-radius: 16px;
+  padding: $spacing-xs $spacing-m;
+  width: fit-content;
+}

@@ -1,0 +1,17 @@
+@import '../variables';
+
+.tab-list-item {
+  padding: 12px 36px;
+
+  &:hover {
+    background-color: $color-sunray-light;
+    color: $color-gray-dark;
+    cursor: pointer;
+  }
+}
+
+.tab-list-active {
+  background-color: $color-sunray-medium;
+  color: $color-gray-dark;
+  font-weight: bold;
+}

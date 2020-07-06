@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "flash-cardster",
+    "flash-cardster": "flash-cardster"
+  }
+}

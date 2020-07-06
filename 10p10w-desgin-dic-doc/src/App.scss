@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./mixins.scss";
+
+:root {
+
+  &>*,
+  &>*>div,
+  .tabs,
+  .tab-content {
+    min-height: 100vh;
+  }
+}
+
+.copy-pill {
+  @include pill;
+  margin: 0 auto $spacing-m auto;
+  background-color: $color-gray-light;
+  cursor: pointer;
+  box-shadow: inset -1px -2px 4px $color-gray-medium;
+  user-select: none;
+
+  &:active {
+    box-shadow: inset 1px 2px 4px $color-gray-medium;
+  }
+}
+
+.Toastify {
+  & .clipboard-toast {
+    background-color: $color-sea-light;
+    border-radius: 12px;
+    color: black;
+    font-family: inherit;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    &__progress {
+      height: 0;
+    }
+
+    &>button {
+      opacity: 0.6;
+    }
+  }
+}
+
+.descriptor-paragraph {
+  width: 50%;
+  margin-bottom: $spacing-l;
+
+  @media screen and (max-width: 1500px) {
+    width: 100%;
+  }
+}

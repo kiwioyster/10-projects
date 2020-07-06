@@ -1,0 +1,15 @@
+@import '../variables';
+
+.tab-list-item {
+  padding: 12px 36px;
+
+  &:hover {
+    background-color: $color-rose-light;
+    cursor: pointer;
+  }
+}
+
+.tab-list-active {
+  background-color: $color-rose-medium;
+  font-weight: bold;
+}

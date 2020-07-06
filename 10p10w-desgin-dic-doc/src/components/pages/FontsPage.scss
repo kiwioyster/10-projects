@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.font-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 36px;
+}
+
+.font-card {
+  text-align: center;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 2px 2px 10px black;
+
+  &__value {
+    height: fit-content;
+    color: black;
+    background-color: $color-gray-light;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 4px 0;
+  }
+
+  &__text {
+    color: $color-gray-dark;
+    height: 50%;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}

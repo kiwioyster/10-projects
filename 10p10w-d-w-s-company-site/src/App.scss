@@ -1,0 +1,242 @@
+@import './variables';
+
+h1,
+h2,
+h3,
+h4 {
+  display: inline-block;
+}
+
+.body {
+  margin-top: $spacing-xl;
+}
+
+.logo > img {
+  height: 80px;
+}
+
+section {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero-section {
+  &::before {
+    margin-top: $spacing-xl;
+    content: '';
+    top: -130px;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    position: absolute;
+    z-index: -2;
+    filter: brightness(0.65);
+    background-image: url('https://res.cloudinary.com/trends-publishing/image/upload/s--SByCxLmL--/c_scale,dpr_1.0,g_center,w_2560/e_anti_removal:10,g_south_east,l_trends_watermark,o_70,w_200,x_10,y_10/f_auto,q_auto:best/0151013.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      to top,
+      rgba(255, 0, 0, 0) 40%,
+      rgba($color-sea-dark, 0.55) 100%
+    );
+    z-index: -1;
+  }
+
+  height: 62vh;
+  box-sizing: border-box;
+
+  h1 {
+    color: white;
+    font-size: 8vw;
+    display: block;
+    margin: 2rem auto;
+    text-shadow: 1px 1px 4px black;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 5rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+
+  .sub-heading {
+    color: white;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 4px black;
+  }
+}
+
+.contact-section {
+  height: fit-content;
+  box-sizing: border-box;
+  color: white;
+  background: linear-gradient(0deg, $color-gray-light 25%, $color-ash-dark 60%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 3rem;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  small {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin: 12px 0;
+  }
+
+  @media screen and (max-width: 760px) {
+    padding: 0;
+  }
+
+  .contact-text-ctn {
+    width: fit-content;
+    margin: auto;
+    border-radius: 150px;
+    background: $color-ash-dark;
+    padding: 12px 150px;
+
+    @media screen and (max-width: 760px) {
+      width: 100%;
+      padding: 36px;
+      border-radius: 0px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.feature-section {
+  background-color: $color-gray-light;
+  height: fit-content;
+
+  background: linear-gradient(
+    90deg,
+    rgba($color-sea-medium, 0.4) 0%,
+    $color-gray-light 40%,
+    $color-gray-light 60%,
+    rgba($color-sea-medium, 0.4) 100%
+  );
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    width: fit-content;
+    margin: 0 36px;
+    text-align: left;
+  }
+
+  .feature-heading {
+    margin-top: 0;
+    text-shadow: 1px 1px 1px $color-gray-medium;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .icon-circle {
+    display: inline-flex;
+    border-radius: 50%;
+    background-color: $color-ash-dark;
+    width: 38px;
+    height: 38px;
+    margin-right: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px $color-ash-dark;
+  }
+
+  li {
+    font-size: 1.5rem;
+    margin: 12px 0;
+
+    text-shadow: 1px 1px 2px $color-gray-medium;
+
+    & div {
+      text-shadow: none;
+    }
+  }
+
+  i {
+    font-size: 1.1rem;
+    background: -webkit-linear-gradient($color-sea-light, $color-sea-medium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .feature-list-ctn {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 760px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.testimonial-section {
+  background-color: $color-ash-dark;
+  height: fit-content;
+  color: white;
+
+  h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+  }
+
+  .testimonial-ctn {
+    background: linear-gradient(0deg, $color-sea-light -80%, white 40%);
+    width: 40%;
+    padding: 24px 70px;
+    margin: 48px auto;
+    border-radius: 150px;
+    text-shadow: 0 0 3px white;
+    color: $color-ash-dark;
+
+    @media screen and (max-width: 760px) {
+      border-radius: 12px;
+      padding: 12px 24px;
+      margin: 24px auto 24px auto;
+      width: 80%;
+    }
+  }
+
+  .testimonial-person {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .testimonial-quote {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+}
+
+.footer-section {
+  background-color: black;
+  height: fit-content;
+  color: white;
+  font-size: 140%;
+
+  h3 {
+    margin-top: 0;
+  }
+}

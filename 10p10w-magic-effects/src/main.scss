@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxanium:800&display=swap');
+
+:root {
+  --color-primary-dark: rgb(0, 89, 128);
+  --color-primary: rgb(1, 158, 225);
+  --color-secondary: rgb(252, 234, 26);
+  --color-tertiary: rgb(226, 9, 27);
+  --color-gray: rgb(221, 221, 221);
+  --color-gray-light: rgb(239, 239, 239);
+}
+
+$fireColor: rgb(255, 80, 0);
+$fireColorT: rgba(255, 80, 0, 0);
+$dur: 1s;
+$blur: 0.02em;
+$fireRad: 3em;
+$parts: 50;
+$transParts: 90;
+$partSize: 5em;
+$base: 1vw;
+
+body {
+  background-color: rgb(18, 2, 2);
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Archivo Narrow';
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fire {
+  font-size: 24px;
+  filter: blur($blur);
+  -webkit-filter: blur($blur);
+  margin: 0 auto;
+  position: relative;
+  width: 8em;
+  height: 12em;
+}
+
+.particle {
+  animation: rise $dur ease-in infinite;
+  background-image: radial-gradient($fireColor 20%, $fireColorT 70%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  width: $partSize;
+  height: $partSize;
+  pointer-events: none;
+
+  // spread particles out in time and x-position to get desired effect
+  @for $p from 1 through $parts {
+    &:nth-of-type(#{$p}) {
+      animation-delay: $dur * random();
+      left: calc((100% - #{$partSize}) * #{($p - 1) / 38});
+    }
+  }
+
+  &--explode {
+    background-image: radial-gradient($fireColor 20%, $fireColorT 70%);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: $partSize;
+    height: $partSize;
+    pointer-events: none;
+    transition: transform 1.5s cubic-bezier(0.17, 0.67, 0, 1.34);
+    animation: explode 0.6s linear;
+    animation-delay: 0s !important;
+    @for $p from 1 through $transParts {
+      &:nth-of-type(#{$p}) {
+        animation-delay: $dur * random();
+        left: calc((100% - #{$partSize}) * #{($p - 1) / $transParts});
+      }
+    }
+  }
+}
+
+@keyframes explode {
+  from {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10em) scale(0);
+  }
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  display: none;
+  text-align: center;
+  &--show {
+    display: block;
+  }
+}
+
+.load-btn, .toggle-btn {
+  text-shadow: none;
+  border-radius: 36px;
+  padding: 6px 36px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(83, 38, 38);
+  height: 3rem;
+  width: 15rem;
+  font-size: 1.3rem;
+  color: white;
+  margin-top: 4rem;
+  &--hide {
+    display: none;
+  }
+}
+

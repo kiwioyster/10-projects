@@ -1,0 +1,45 @@
+@import '../variables';
+@import '../mixins.scss';
+
+.side-tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  background-color: $color-rose-dark;
+  color: $color-gray-light;
+  width: $spacing-xxl;
+  text-align: center;
+}
+
+.tab-content {
+  margin-left: $spacing-xxl;
+  padding: $spacing-l $spacing-xl;
+  background-color: $color-gray-dark;
+  color: $color-gray-light;
+  box-sizing: border-box;
+}
+
+.tabs-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.version-pill {
+  @include pill;
+  font-size: $font-small;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  background-color: $color-sea-medium;
+}
+
+.heading {
+  font-size: $font-heading-4;
+  margin: $spacing-l 0;
+}
+
+.tabs {
+  color: $color-gray-dark;
+}

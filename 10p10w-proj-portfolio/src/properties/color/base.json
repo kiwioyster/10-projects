@@ -1,0 +1,48 @@
+{
+  "color": {
+    "sunray": {
+      "light": {
+        "value": "#fdca6b"
+      },
+      "medium": {
+        "value": "#ffad14"
+      },
+      "dark": {
+        "value": "#C4790E"
+      }
+    },
+    "purple": {
+      "light": {
+        "value": "#8d7eaa"
+      },
+      "medium": {
+        "value": "#493c6e"
+      },
+      "dark": {
+        "value": "#2c2142"
+      }
+    },
+    "ash": {
+      "light": {
+        "value": "#EDF7F8"
+      },
+      "medium": {
+        "value": "#A2AEBB"
+      },
+      "dark": {
+        "value": "#313645"
+      }
+    },
+    "gray": {
+      "light": {
+        "value": "#E7E9EA"
+      },
+      "medium": {
+        "value": "#7A7C7E"
+      },
+      "dark": {
+        "value": "#232528"
+      }
+    }
+  }
+}
